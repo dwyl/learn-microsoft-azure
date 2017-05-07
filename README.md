@@ -190,6 +190,38 @@ You should now see the rule in the
 ![azure-http-rule-added-success](https://cloud.githubusercontent.com/assets/194400/26027612/a77613fa-3808-11e7-9246-a7215626d1ed.png)
 
 
+### 12. Install & Run NGINX to Test
+
+While logged into the remote machine (the azure VM) run the following three commands:
+
+```sh
+sudo apt-get update
+sudo apt-get install nginx -y
+sudo service nginx start
+```
+You should see:
+![nginx-install](https://cloud.githubusercontent.com/assets/194400/26026944/237fec66-37fd-11e7-8519-326c343ba597.png)
+Then:
+![nginx-install](https://cloud.githubusercontent.com/assets/194400/26026948/3c9d0512-37fd-11e7-95d2-ddfad453b127.png)
+Then:
+
+
+### 13. Confirm NGINX is Serving the Default Page
+
+Now visit the IP address for your VM in a browser (_in our case:_ http://52.232.127.28/)
+and you should expect to see the following:
+
+![nginx-working-on-azure](https://cloud.githubusercontent.com/assets/194400/26026902/77d8fbc8-37fc-11e7-8560-4b2cf585ba6c.png)
+
+## Congratulations Your Azure VM Instance is _Working_!! :-)
+
+After you've tested with NGINX, if you prefer to _remove_ it
+(_because you don't need it for serving your app_)
+see:
+https://askubuntu.com/questions/235347/what-is-the-best-way-to-uninstall-nginx
+
+
+
 <br /><br /><br /><br /><br />
 
 
