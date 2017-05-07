@@ -49,6 +49,21 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-manage-vm
 
 
 
+
+### 3. Create Ubuntu `16.04 LTS` Virtual Machine
+
+![azure-create-ubuntu-16 04-lts](https://cloud.githubusercontent.com/assets/194400/26004467/ea050aae-372d-11e7-94f6-fb9e8463208f.png)
+
+1. Search for "Ubuntu LTS"
+2. Select the LTS Version which is _currently_ `16.04 LTS`
+3. Select the VM from the Right Menu <br >
+  Note: Dependent on your screen size, you may need to scroll to the Right to reveal the "Create" Button.
+4. Click "Create" button to start the creation process.
+
+![azure-create-button](https://cloud.githubusercontent.com/assets/194400/26009278/fbcec8b2-373f-11e7-8bab-efb67ccd3cdc.png)
+
+
+
 ### X. Login With SSH
 
 
