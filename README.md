@@ -5,28 +5,30 @@ Database Server to Microsoft Azure.
 
 ## Why?
 
-A decision was made by someone to deploy your work/app to Azure,
+The decision was made to deploy your work/app to Azure<sup>1</sup>,
 now you have the task of making it happen.
 
 ## What?
 
-Step-by-Step guide to deploying your first app on Microsoft Azure.
+A Step-by-Step guide to deploying your first app on Microsoft Azure.
+
+> This guide focusses on deploying a Phoenix Web Application
+(_because that is our chosen
+[technology stack](https://github.com/dwyl/technology-stack) @dwyl_)
+But it contains many _generally_ applicable skills for other stacks.
 
 ## Who?
 
-Developers who need to deploy to Azure because their client/employer requires them to.
-_Everyone_ `else` knows there are _better_ (_more mature, feature rich/innovative, faster, cheaper_) alternatives.
+Developers who need to deploy to Azure
+because their client/employer requires them to.
 
 ## How?
 
-### 1. Register for Azure
+This is a step-by-step guide to deploying an App on Azure.
 
-If you don't already have a Microsoft Azure account (_why would you?_)
-register for one at: https://azure.microsoft.com/
-
-![Azure register](https://cloud.githubusercontent.com/assets/194400/23656683/9aa2c3d6-0332-11e7-8c4d-5e45ed2049a4.png)
-
-### 2. Go to your "Portal Dashboard"
+> If you don't already have an account on Azure,
+go register for one now!
+[/**register**-for-**azure**-account.md](https://github.com/dwyl/learn-microsoft-azure/blob/master/register-for-azure-account.md)
 
 
 ### X. Login With SSH
@@ -39,9 +41,6 @@ and the IP address is `51.140.45.21`.
 ssh hladmin@51.140.45.21
 ```
 
-```
-no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command="echo 'Please login as the user \"hladmin\" rather than the user \"root\".';echo;sleep 10" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5lvyvoOry+TRFwDjYWHt4L+6LOlCo9uD47qzQFJVYHNg+TW/QZwbI3eWBElg5i1QlrTfnFGyQD31aj4qukaqsrqx0tsgysUS8nOltrx2IYxSJ1XFqQCETXwNvjns+gasOvg07yoGnczgtsUWWuytQkwu5x8+cGhC08e65AFAYZuam8jHQgsDhOeskN0RzpdyfI7IjNNheTkcHIfgMy+iaZHTDNE95vELdKhu9N8+HzxUko+GanRADCIYZGBaJPWX4i9gRVgevPGCJ+Y/W96ctnWm0TdzdVyypF4q8oiySbujm/4fqLH1tP7lp9Aox2XlK98PRTkhD0rZvKaa6gEDWDxihSz0Phhvuv4da/IOSimw+5v5f439m69cWruQh9a46652nUqA92En2hayql6uE5D9QWgoKZFCebIBQfGHqKU3kIL0zENnpQM+39ydipYN4+2gXLajmAgpMi+/EXk1y/grhxOugLcJgSLfHR5/6pEzXiHNhPPE1gpCcxpDuELcCi/cIaKmjo+w2m6onmouHu6iZE2SMEIo3WkBhVtSiKqERjS63xfkaI8eDdlQ3ONh++ykk+nM49Y/Y47ofj5FV5hTfFLvre9tpsK5dHkw7Qe85dbyxc92TSDD0+2uI3w2D86BXBLnNVf03njXIWEyI8jfkk1HqKuZs2ptkYeqd8w==
-```
 
 
 ### X. Install Dokku
@@ -152,7 +151,7 @@ ours is:
 ```
 dokku config:set healthlocker SECRET_KEY_BASE=XwegP5nDFVh6ik5DYEmuwD0egecwPTFMAU684tajrEBbWRBCHbLxCd0J98auGH7m HOSTNAME=healthlocker.uksouth.cloudapp.azure.com  
 ```
-Azur3sucks2017
+<!-- Azur3sucks2017 -->
 
 ### (Optionally) Create SSH Keys
 
@@ -209,7 +208,7 @@ sudo mix phoenix.server
 
 ## tl;dr
 
-Microsoft Azure is not "_better_" than any other "Cloud"
+<sup>1</sup>Microsoft Azure is not "_better_" than any other "Cloud"
 Infrastructure/Platform Provider.
 They have implemented a IaaS/PaaS in _response_ to Amazon Web Services.
 We are _only_ using it because one of our clients (NHS) _requires_ us to.
@@ -221,3 +220,16 @@ that Azure is an _easy_ decision for certain companies/executives
  to make given their _existing_ investment/commitment to Microsoft ...
  So we want to _document_ our setup so that it can be followed
  by anyone `else` in the same situation.§
+
+Much like Windows Phone, Azure is a "_me too_" product where Microsoft
+is playing catchup with _well-established/better_
+(_more mature, feature rich/innovative, faster, cheaper_) alternatives.
+There's _no_ ***technical reason*** why _anyone_ would use Azure
+other than a political decision.
+In our case the NHS were offered _big_ discounts by Microsoft to use Azure.
+Everyone knows that MSFT are discounting Azure to the NHS for reasons
+_other_ than "doing good", but the NHS IT people love a bargain so they are
+investing huge amounts of time locking themselves into the Microsoft "Cloud".
+
+At least all the apps that _we_ (@dwyl) build are designed to be
+"infrastructure agnostic" (_i.e. no "lock-in"_).
