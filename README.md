@@ -31,6 +31,24 @@ go register for one now!
 [/**register**-for-**azure**-account.md](https://github.com/dwyl/learn-microsoft-azure/blob/master/register-for-azure-account.md)
 
 
+### 0. Go to "Azure Portal Dashboard"
+
+Visit your Azure Dashboard: https://portal.azure.com
+
+
+### 2. Create a Virtual Machine
+
+![azure-no-vms](https://cloud.githubusercontent.com/assets/194400/26004350/5d2d925e-372d-11e7-9d63-3c5097cf9c17.png)
+
+1. Click on the "Burger" (☰) Menu to expand the service menu
+2. Click on "Virtual Machines" in the services menu
+3. Click on "+ Add" to add a Virtual Machine
+
+> The Azure Tutorial(s) all assume you have the CLI installed. e.g:
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-manage-vm
+
+
+
 ### X. Login With SSH
 
 
