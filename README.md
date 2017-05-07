@@ -63,6 +63,27 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-manage-vm
 ![azure-create-button](https://cloud.githubusercontent.com/assets/194400/26009278/fbcec8b2-373f-11e7-8bab-efb67ccd3cdc.png)
 
 
+### 4. Input the Configuration Details for your VM
+
+You should then see a screen similar to this:
+
+![azure-create-vm-details](https://cloud.githubusercontent.com/assets/194400/26009083/355e65de-373f-11e7-994f-f1ddd00a2105.png)
+
+1. Name: give your VM a meaningful name e.g: `phoenix-prod-1` (_useful if you end up having a cluster of several machines later on..._)
+2. VM disk type: SSD (_keep the default_)
+3. User name: `azure` (_they don't let you have the username `root` even though which ever username you do pick here has `root priviledges`!... I use `azure` so it's clear which platform my VM is hosted by/on._)
+4. Authentication Type: `SSH public key` (_obviously more secure than password_)
+5. SSH public key - paste your public key here.
+(_if you don't have a public key,
+how are you using GitHub...?!_
+see: http://stackoverflow.com/questions/3828164/how-do-i-access-my-ssh-public-key ...)
+6. Subscription: Free Trial (_obviously_)
+7. Resource Group: [x] Create new.
+Called it `phoenix-cluster`
+8. Location: `West Europe` (_pick what ever is closest to your end-users_)
+9. Click "OK" (_finally_!)
+
+
 
 ### X. Login With SSH
 
