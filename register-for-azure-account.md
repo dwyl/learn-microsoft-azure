@@ -1,4 +1,11 @@
+## Register for Azure in _TWELVE_ Easy Steps!
 
+This is the UX you should _expect_ when using Azure:
+
+![image](https://cloud.githubusercontent.com/assets/194400/23659918/aa0e67aa-033f-11e7-8259-ad40a96b2d2c.png)
+As long as you ***set your expectations*** (_low_) going in you won't be _too_
+[**disappointed / frustrated**](https://feedback.azure.com/forums/266794-support-feedback/suggestions/10461873-azure-is-unfinished-product-support-sucks) <br />
+With that disclaimer out of the way, let's get started! :-)
 
 ### 1. Register for Azure
 

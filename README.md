@@ -1,5 +1,7 @@
 # Learn Microsoft Azure
 
+![windows-azure-cloud](https://cloud.githubusercontent.com/assets/194400/26023549/0c3ee1a2-37b6-11e7-8cb4-8bf689409df3.png)
+
 Learn how to deploy your Web Application &amp;
 Database Server to Microsoft Azure.
 
@@ -12,26 +14,32 @@ now you have the task of making it happen.
 
 A Step-by-Step guide to deploying your first app on Microsoft Azure.
 
-> This guide focusses on deploying a Phoenix Web Application
+The first part of this guide focusses on getting a Linux Virtual Machine
+launched on Azure. You can then deploy what ever you like to it
+and it will work _similarly_ to other cloud providers.
+
+
+After that we move on to deploying a Phoenix Web Application
 (_because that is our chosen
 [technology stack](https://github.com/dwyl/technology-stack) @dwyl_)
-But it contains many _generally_ applicable skills for other stacks.
+but the process is the same for _any_ stack.
 
 ## Who?
 
 Developers who need to deploy to Azure
 because their client/employer requires them to.
+If you have no prior "Cloud" Infrastructure experience,
+you will have no expectations or pre-conceptions.
+
 
 ## How?
-
-This is a step-by-step guide to deploying an App on Azure.
 
 > If you don't already have an account on Azure,
 go register for one now!
 [/**register**-for-**azure**-account.md](https://github.com/dwyl/learn-microsoft-azure/blob/master/register-for-azure-account.md)
 
 
-### 0. Go to "Azure Portal Dashboard"
+### 1. Go to "Azure Portal Dashboard"
 
 Visit your Azure Dashboard: https://portal.azure.com
 
@@ -46,8 +54,8 @@ Visit your Azure Dashboard: https://portal.azure.com
 
 > The Azure Tutorial(s) all assume you have the CLI installed. e.g:
 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-manage-vm
-
-
+> I'm doing a _step-by-step_ GUI tutorial instead because it's
+_way_ more beginner friendly!
 
 
 ### 3. Create Ubuntu `16.04 LTS` Virtual Machine
@@ -83,6 +91,31 @@ Called it `phoenix-cluster`
 8. Location: `West Europe` (_pick what ever is closest to your end-users_)
 9. Click "OK" (_finally_!)
 
+### 5. Size: Choose Virtual Machine Size
+
+![azure-create-vm-2](https://cloud.githubusercontent.com/assets/194400/26013750/b2643dee-3751-11e7-8fc6-8de78ecb8d23.png)
+
+Select the _cheapest_ VM available and
+then click the "Select" button.
+
+
+### 6. Confirm the Settings for New Instance
+
+Confirm the settings for your new instance (_leave the defaults they are fine_):
+
+![azure-leave-default-settings](https://cloud.githubusercontent.com/assets/194400/26023339/47bed7b4-37b1-11e7-982a-612909042726.png)
+
+Click on "OK" to confirm.
+
+> nothing.else.is.available@outlook.com
+
+### 7. Instance Summary
+
+![azure-create-vm-4](https://cloud.githubusercontent.com/assets/194400/26023438/2a790cfe-37b3-11e7-8920-c36d822a2808.png)
+
+Once you have confirmed the details, click "OK" to launch your instance.
+
+### 8.
 
 
 ### X. Login With SSH
@@ -114,16 +147,45 @@ cat ~/.ssh/id_rsa.pub | ssh hladmin@healthlocker.uksouth.cloudapp.azure.com "sud
 
 <sup>1</sup>Microsoft Azure is not "_better_" than any other "Cloud"
 Infrastructure/Platform Provider.
-They have implemented a IaaS/PaaS in _response_ to Amazon Web Services.
-We are _only_ using it because one of our clients (NHS) _requires_ us to.
-We would prefer to use AWS, Digital Ocean
+They have implemented a IaaS/PaaS in _response_ to Amazon Web Services;
+because they saw their server business being _wiped out_.
+Their choice of name "Windows Azure" in 2010 reflects how _utterly clueless_
+[Steve Ballmer](https://medium.com/packt-publishing/how-to-be-like-steve-ballmer-cf4c9803d74c)
+was about the "Cloud" (_Market_)
+that MSFT saw Azure as a way to sell more Windows (_i.e. Server Licenses_)
+and not as general purpose platform. _Obviously_ in 2014 when
+[Satya Nadella](https://en.wikipedia.org/wiki/Satya_Nadella)
+was made CEO of Microsoft Azure was re-branded from "**_Windows_ Azure**"
+to "**_Microsoft_ Azure**" they decided to expand
+to being a more general purpose IaaS/PaaS provider.
+The fact that Nadella was "Executive Vice President" of "Cloud and Enterprise"
+before being made CEO helped Microsoft to focus on that segment
+of their business when was given the reins.
+
+To be **100% Clear**: we are _only_ using Azure
+because one of our clients (NHS) _requires_ us to.
+We would _prefer_ to use AWS, Digital Ocean
 or Google Could Platform over Azure _every time_.
+Not that we think that the _people_ working on the Azure team are "bad"
+just that the Company (Microsoft) is [Evil](https://www.reddit.com/r/OutOfTheLoop/comments/2v4ses/why_is_microsoft_so_widely_considered_evil/) and should not be supported.
+
+> Microsoft has _allowed_ their OS to be insecure
+which has lead to Ransomeware costing the NHS _real_ Time and Money
+e.g: http://www.bbc.co.uk/news/health-39899646
+We think the NHS should implement moving _away_ from Microsoft _immediately_.
+If anyone _at_ the NHS is reading `this` far and wants to discuss
+an ***implementation plan*** for moving away from
+[Microsoft's **Monopoly**](http://techrights.org/2016/06/05/microsoft-reputation-laundered),
+contact us to discuss,
+I will _personally_ work for **FREE** for as long as it takes
+to make the NHS 100% Open Source, Transparent
+and thus Orders of Magnitude more Cost-effective!!
 
 We _understand_ from a corporate policy/decision-making perspective
-that Azure is an _easy_ decision for certain companies/executives
+that Azure is an _easy_ decision for certain companies/"executives"
  to make given their _existing_ investment/commitment to Microsoft ...
  So we want to _document_ our setup so that it can be followed
- by anyone `else` in the same situation.§
+ by anyone `else` in the same situation.
 
 Much like Windows Phone, Azure is a "_me too_" product where Microsoft
 is playing catchup with _well-established/better_
