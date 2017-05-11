@@ -1,6 +1,6 @@
 # Learn Microsoft Azure
 
-![windows-azure-cloud](https://cloud.githubusercontent.com/assets/194400/26023549/0c3ee1a2-37b6-11e7-8cb4-8bf689409df3.png)
+![windows-azure-cloud](https://cloud.githubusercontent.com/assets/194400/26028631/9cdc1840-381c-11e7-9391-73f8cda79fac.png)
 
 Learn how to deploy your Web Application &amp;
 Database Server to Microsoft Azure.
@@ -310,11 +310,20 @@ Visit your app by IP Address in your Web Browser. e.g: http://52.232.127.28
 
 ## Part 3: Using the Azure PostgreSQL-as-a-Service Database with Phoenix
 
+see: https://github.com/dwyl/learn-microsoft-azure/issues/5
 
 
-## Part 4: "Advanced" Deployment for High Availability
+<br />
 
+# "Advanced" Deployment
 
+## Part 4: High Availability Clustering (_including WebSockest!_)
+
+### Clustering Two VMs
+
+### Load Balancing
+
+### Monitoring
 
 
 
