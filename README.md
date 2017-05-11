@@ -224,7 +224,6 @@ see:
 https://askubuntu.com/questions/235347/what-is-the-best-way-to-uninstall-nginx
 
 
-
 ## Part 2: Deploying Your Application
 
 Before deploying _your_ app to the Azure Instance,
@@ -233,7 +232,87 @@ shut down NGINX (_if you still have it running from "Part 1"_)
 sudo service nginx stop
 ```
 
-## Part 3: "Advanced" Deployment for High Availability
+For deploying a Phoenix Framework Web Application,
+see:
+
+> **TODO**: Link to `advanced-deployment.md` once PR containing instructions is merged!
+
+
+### Edit Your `~/.profile` File on Azure Instance to set TCP Port for Phoenix
+
+Your Phoenix Web Application expects to have an environment variable
+defined for the TCP PORT which the app will listen on.
+In our case we are going to stick with the default and use `4000`.
+
+Run the following command to append the line
+`export PORT=4000` to your `~/.profile` file:
+```
+"echo export PORT=4000" >> ~/.profile
+```
+Then run the following command to ensure that `~/.profile` file is _loaded_:
+```
+source ~/.profile
+```
+You can _confirm_ that the `PORT` environment variable is now define on the VM
+by running the `printenv` command:
+```
+printenv
+```
+![azure-define-port](https://cloud.githubusercontent.com/assets/194400/26028291/5c29b336-3815-11e7-8ca3-3f595b12579c.png)
+
+### Redirect TCP Port 80 to Port 4000 (where our app is listening)
+
+On the Azure Instance run the following command:
+```
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 4000
+```
+To _confirm_ the routing from port 80 to 4000 run the following command:
+```
+sudo iptables -t nat --line-numbers -L
+```
+![azure-port-redirect-80-to-4000](https://cloud.githubusercontent.com/assets/194400/26028325/1a9ee228-3816-11e7-9dd0-d04fb09d6169.png)
+
+Now when you _deploy_ the app to this instance
+it will "_listen_" on PORT 4000,
+but the Firewall will re-route `http` requests from port `80` to `4000`.
+
+
+### Deploy your Phoenix Web App using EDeliver
+
+Once you have configured your Phoenix App to deploy using Edeliver,
+simply update the settings of your `.deliver/config` file to
+to the VM IP Address and username of your Azure instance:
+
+```
+PRODUCTION_HOSTS="52.232.127.28"
+PRODUCTION_USER="azure"
+DELIVER_TO="/home/azure"
+```
+
+Once you have updated the `.deliver/config` file with the Azure VM details,
+run these two commands from inside your Phoenix Project (_on your local machine_):
+
+```
+mix edeliver deploy release to production
+mix edeliver start production
+```
+
+You should expect to see the following output:
+
+![deploy-app-to-azure](https://cloud.githubusercontent.com/assets/194400/26028205/9d2f3ca4-3813-11e7-949e-405a09ce2137.png)
+
+### Confirm the Phoenix App is Working in a Web Browser
+
+Visit your app by IP Address in your Web Browser. e.g: http://52.232.127.28
+
+![phoenix-app-working-on-azure](https://cloud.githubusercontent.com/assets/194400/26028344/8572b192-3816-11e7-8e7b-2011da765348.png)
+
+
+## Part 3: Using the Azure PostgreSQL-as-a-Service Database with Phoenix
+
+
+
+## Part 4: "Advanced" Deployment for High Availability
 
 
 
