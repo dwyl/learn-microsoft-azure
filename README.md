@@ -15,7 +15,7 @@ now you have the task of making it happen.
 A Step-by-Step guide to deploying your first app on Microsoft Azure.
 
 The first part of this guide focusses on getting a Linux Virtual Machine
-launched on Azure. <br /.
+launched on Azure. <br />
 You can then deploy what ever you like to it
 and it will work _similarly_ to other cloud providers.
 
