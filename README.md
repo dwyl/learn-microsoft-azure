@@ -324,15 +324,24 @@ see: https://github.com/dwyl/learn-microsoft-azure/issues/5
 
 ## Part 4: High Availability Clustering (_including WebSockest!_)
 
-### Clustering Two VMs
-
 ### Load Balancing
+
++ Azure **Load Balancer**:
+https://azure.microsoft.com/en-gb/services/load-balancer -
+All web traffic is handled through the load balancer which performs
+_continous_ health checks on the application server(s) and routes
+requests in a "round-robin" to balance load.
+
+> Screenshots + full walkthrough to follow.
+
+<!-- ### Clustering Two VMs
 
 
 
 ### Monitoring
 
 > Use default Azure Monitoring.
+ -->
 
 ## Background Reading
 
