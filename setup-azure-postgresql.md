@@ -56,11 +56,17 @@ of storage space and "compute units" then go for more, but for _most_ "simple"
 web applications the "Basic" tier is _perfectly fine_.
 10. Click "**Create**" to finalise the creation.
 
-## 5.
+## 5. Add the `DATABASE_URL` Environment Variable to the App Server(s)
 
+On your application server add the `DATABASE_URL` Environment Variable:
 
 Environment Variables:
 ```
 export DATABASE_URL=postgres://postgres@pxblog:{your_password}@pxblog.postgres.database.azure.com:5432/{your_database}?ssl=true
 export PORT=4000
 ```
+
+We _recommend_ adding environment variables to the `~/.profile` file.
+
+> Note: ensure that you have granted access to app server
+from the database server.
