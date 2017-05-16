@@ -1,6 +1,6 @@
 ## tl;dr
 
-<sup>1</sup>Microsoft Azure is not "_better_" than any other "Cloud"
+Microsoft Azure is not "_better_" than any other "Cloud"
 Infrastructure/Platform Provider.
 They have implemented a IaaS/PaaS in _response_ to Amazon Web Services;
 because they saw their server business being _wiped out_.

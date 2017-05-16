@@ -15,7 +15,8 @@ now you have the task of making it happen.
 A Step-by-Step guide to deploying your first app on Microsoft Azure.
 
 The first part of this guide focusses on getting a Linux Virtual Machine
-launched on Azure. You can then deploy what ever you like to it
+launched on Azure. <br /.
+You can then deploy what ever you like to it
 and it will work _similarly_ to other cloud providers.
 
 
@@ -86,6 +87,10 @@ You should then see a screen similar to this:
 (_if you don't have a public key,
 how are you using GitHub...?!_
 see: http://stackoverflow.com/questions/3828164/how-do-i-access-my-ssh-public-key ...)
+copy your ssh key into your clipboard using this command:
+```
+pbcopy < ~/.ssh/id_rsa.pub
+```
 6. Subscription: Free Trial (_obviously_)
 7. Resource Group: [x] Create new.
 Called it `phoenix-cluster`
@@ -323,10 +328,11 @@ see: https://github.com/dwyl/learn-microsoft-azure/issues/5
 
 ### Load Balancing
 
+
+
 ### Monitoring
 
-
-
+> Use default Azure Monitoring.
 
 ## Background Reading
 
@@ -342,3 +348,4 @@ http://stackoverflow.com/questions/38155616/azure-ubuntu-vm-endpoints
 + http://blog.pragtechnologies.com/deploying-phoenix-using-dokku-in-azure/
 
 <br /><br /><br /><br /><br />
+<sup>1</sup>See: [/tldr.md](https://github.com/dwyl/learn-microsoft-azure/blob/master/tldr.md)
