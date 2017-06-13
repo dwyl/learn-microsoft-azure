@@ -27,7 +27,7 @@ Connection timed out.
 
 IP Address updated to 51.140.66.108 without _any warning_ ...
 
-Attempted to ssh in
+Attempted to ssh in:
 ```
 ssh hladmin@51.140.66.108
 ```
@@ -38,7 +38,27 @@ Unable to negotiate with 51.140.66.108 port 22: no matching host key type found.
 ```
 see: https://askubuntu.com/questions/836048/ssh-returns-no-matching-host-key-type-found-their-offer-ssh-dss
 
+```sh
+ssh -oHostKeyAlgorithms=+ssh-dss hladmin@51.140.66.108
+```
 > Note: the VM is restricted/protected by RSA Public Key.
+
+20 Emails and 27h later ...
+![20-emails](https://user-images.githubusercontent.com/194400/27083120-5cb9707e-503f-11e7-85b8-eff7761f5cc3.png)
+
+_Finally_, Got access to a _new_ VM on a different IP Address:
+```sh
+ssh hladmin@51.140.86.5
+```
+
+![azure-vm-access-resumed](https://user-images.githubusercontent.com/194400/27083153-77f4e56c-503f-11e7-9034-87ac1079b7dc.png)
+
+Instal Security Updates:
+
+```
+sudo apt-get update
+```
+![outbound-http-working-on-azure-vm](https://user-images.githubusercontent.com/194400/27087776-d47b3a44-504d-11e7-94de-b625a2b86312.png)
 
 ## Background Reading
 
