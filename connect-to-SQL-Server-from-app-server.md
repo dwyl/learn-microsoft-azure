@@ -60,6 +60,51 @@ sudo apt-get update
 ```
 ![outbound-http-working-on-azure-vm](https://user-images.githubusercontent.com/194400/27087776-d47b3a44-504d-11e7-94de-b625a2b86312.png)
 
+### Connect to Microsoft SQL Server from Linux (CLI)
+
+using `sqlcmd` following this guide:
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-connect-and-query-sqlcmd
+
+### Install `sqlcmd` on Ubuntu
+
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools#ubuntu
+
+### Login
+
+```
+sqlcmd -S 192.555.5.555 -U SA -P '<YourPassword>'
+```
+
+In our case:
+
+```
+sqlcmd -S "$EPJS_MSSQL_DATABASE_SERVER" -U "$EPJS_MSSQL_DATABASE_USERNAME" -P "$EPJS_MSSQL_DATABASE_PASSWORD"
+```
+> Note the values in quotes preceded by a $ are environment variables:
+EPJS_MSSQL_DATABASE_PASSWORD
+EPJS_MSSQL_DATABASE_USERNAME
+EPJS_MSSQL_DATABASE_SERVER
+
+### List Databases
+
+```
+1> select name from sys.databases
+2> go
+```
+
+in our case this showed:
+```
+master
+tempdb
+model
+msdb
+Carenotes
+EPJS4_Derived_Info
+DBAdmin
+MHL2
+```
+
+
 ## Background Reading
 
 + https://docs.microsoft.com/en-us/azure/sql-database/sql-database-connect-query-nodejs
