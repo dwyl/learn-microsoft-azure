@@ -138,6 +138,16 @@ mhlSummaryOfNeed
 mhlPatIndex
 ```
 
+### Run `SELECT` Query to Confirm Data Available
+
+```
+SELECT COUNT(*) FROM mhlPatIndex;
+```
+
+Result:
+![SELECT-COUNT](https://user-images.githubusercontent.com/194400/27328390-eb9ab96e-55a9-11e7-95b0-c0628ef7af92.png)
+
+
 ## Background Reading
 
 + https://docs.microsoft.com/en-us/azure/sql-database/sql-database-connect-query-nodejs
