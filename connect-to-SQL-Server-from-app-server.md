@@ -116,8 +116,26 @@ Copy-paste one line at a time. (_Painfull, I know... thanks Microsoft!_)
 ```
 use MHL2;
 go
-SELECT * FROM information_schema.tables;
+SELECT TABLE_NAME FROM information_schema.tables;
 go
+```
+In our case the tables are:
+```
+mhlTeamMembers
+mhlGPDetails
+mhlSLAMRecoveryCarePlan
+mhlSLAMRecoveryCarePlanContingency
+mhlSLAMRecoveryFocusedCarePlanDailyActivity
+mhlSLAMRecoveryFocusedCarePlanHelper
+mhlSLAMRecoveryFocusedCarePlanHelperPart2
+mhlSLAMRecoveryFocusedCarePlanGettingHelpFromOthersGeneral
+mhlSLAMRecoveryFocusedCarePlanGoalsAndAsp
+mhlSLAMRecoveryFocusedCarePlanGoalsAndAspBudget
+mhlSLAMRecoveryFocusedCarePlanLifeEventsTriggers
+mhlPatientAddressDetails
+mhlPatientNextOfKinDetails
+mhlSummaryOfNeed
+mhlPatIndex
 ```
 
 ## Background Reading
