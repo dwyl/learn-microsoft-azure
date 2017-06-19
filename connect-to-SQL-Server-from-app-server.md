@@ -67,7 +67,17 @@ https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-connect-and-query-sq
 
 ### Install `sqlcmd` on Ubuntu
 
+Please see up-to-date instructions:
 https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools#ubuntu
+
+We ran the following commands:
+```
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+sudo apt-get update
+sudo apt-get install mssql-tools unixodbc-dev
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+source ~/.bash_profile
+```
 
 ### Login
 
@@ -96,14 +106,19 @@ in our case this showed:
 ```
 master
 tempdb
-model
 msdb
-Carenotes
-EPJS4_Derived_Info
 DBAdmin
 MHL2
 ```
+### List Tables in Database:
 
+Copy-paste one line at a time. (_Painfull, I know... thanks Microsoft!_)
+```
+use MHL2;
+go
+SELECT * FROM information_schema.tables;
+go
+```
 
 ## Background Reading
 
