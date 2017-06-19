@@ -18,6 +18,8 @@ able to connect the SQL Server and query the data (_step-by-step_).
 
 Login to the application server (VM) using ssh:
 
+<!--
+
 ```
 ssh hladmin@51.140.45.21
 ```
@@ -47,6 +49,9 @@ ssh -oHostKeyAlgorithms=+ssh-dss hladmin@51.140.66.108
 ![20-emails](https://user-images.githubusercontent.com/194400/27083120-5cb9707e-503f-11e7-85b8-eff7761f5cc3.png)
 
 _Finally_, Got access to a _new_ VM on a different IP Address:
+
+-->
+
 ```sh
 ssh hladmin@51.140.86.5
 ```
@@ -79,8 +84,10 @@ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
 source ~/.bash_profile
 ```
 
-### Login
+### Login to Microsoft SQL Server
 
+Login to the remote SQL Server using the IP, Username,
+and Password
 ```
 sqlcmd -S 192.555.5.555 -U SA -P '<YourPassword>'
 ```
