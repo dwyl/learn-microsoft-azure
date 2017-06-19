@@ -315,10 +315,14 @@ Visit your app by IP Address in your Web Browser. e.g: http://52.232.127.28
 
 ## Part 3: Using the Azure PostgreSQL-as-a-Service Database with Phoenix
 
+We are still pending a _decision_ on this feature ...
 see: https://github.com/dwyl/learn-microsoft-azure/issues/5
 
 
+
 <br />
+
+<!-- ### Clustering Two VMs
 
 # "Advanced" Deployment
 
@@ -333,9 +337,6 @@ _continous_ health checks on the application server(s) and routes
 requests in a "round-robin" to balance load.
 
 > Screenshots + full walkthrough to follow.
-
-<!-- ### Clustering Two VMs
-
 
 
 ### Monitoring
